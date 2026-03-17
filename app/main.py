@@ -20,7 +20,7 @@ app.add_middleware(
 )
 
 # Database setup
-DB_PATH = os.environ.get("DB_PATH", "/data/app.db")
+DB_PATH = os.environ.get("DB_PATH", os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "app.db"))
 
 def get_db():
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
